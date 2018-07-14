@@ -1,0 +1,42 @@
+.row.content {
+  height: 550px
+}
+img {
+  vertical-align: middle;
+}
+
+#flipper { display: block;
+  width: 42px;
+  height: 36px;
+  position: absolute;
+  cursor: pointer;
+  top: 58px;
+  left: 50px;}
+
+
+input{
+  display: inline-block;
+}
+/* On small screens, set height to 'auto' for the grid */
+@media screen and (max-width: 767px) {
+  #flipper {
+    display: none;
+  }
+}
+
+/*!* Portrait tablet to landscape and desktop *!*/
+@media (min-width: 768px) and (max-width: 979px) {
+  #flipper {
+    display: none;
+  }
+
+}
+
+/*!* Landscape phone to portrait tablet *!*/
+/*!* Landscape phones and down *!*/
+@media (max-width: 480px) {
+  #flipper {
+    display: none;
+  }
+
+}

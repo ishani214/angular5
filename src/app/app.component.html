@@ -1,20 +1,65 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+
+
+
+
+
+<div class="container-fluid">
+
+  <div class="row content">
+    <br>
+    <div class="col-lg-8 col-lg-offset-2">
+      <div class="panel panel-default" >
+        <div class="panel-body">
+
+            <legend class=" the legend">Fx Converter</legend>
+
+            <div class="col-md-5">
+              <div class="form-group">
+                <label for="">From</label>
+                <select id="fromCurrency" [(ngModel)]="fromCurrency" (change)="updateFromSymbol()" class="form-control" required>
+                  <option [ngValue]="rate" *ngFor="let rate of rates | keys" > {{rate}} </option>
+                </select>
+              </div>
+
+
+              <div class="form-group">
+                <label for="">From</label><br>
+
+                <span class="" style="display: inline-block; width:10%; line-height:80px;float: right;">{{fromSymbol}}</span>
+                <input type="number" class="form-control"  style="width:80%" placeholder="Send"
+                       [(ngModel)]="from" (input)="updateTo()">
+              </div>
+            </div>
+            <div class="col-md-2">
+              <img  (click)="updateTo();updateFrom()" src="assets/image/download.png" id="flipper">
+
+            </div>
+            <div class="col-md-5">
+
+              <div class="form-group">
+                <label for="">To</label>
+                <select id="toCurrency" [(ngModel)]="toCurrency" class="form-control" (change)="updateToSymbol()" required>
+                  <option [ngValue]="rate" *ngFor="let rate of rates | keys" > {{rate}} </option>
+                </select>
+
+              </div>
+
+              <div class="form-group">
+                <label for="">To</label><br>
+                <span class="" style="display: inline-block; width:10%; line-height:80px;float: right;">{{toSymbol}}</span>
+                <input type="number" class="form-control" style="width:80%" placeholder="Receive Amount "
+                       [(ngModel)]="to" (input)="updateFrom()">
+              </div>
+
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+
+
+
+
 
